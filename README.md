@@ -14,9 +14,11 @@ Check out this git repository, and run
 
 Or:
 Download the tar file I created using the script 
- * [ZIP](https://bitbucket.org/vilhuberl/stata-png-fix/get/master.zip)
- * [Tar.gz](https://bitbucket.org/vilhuberl/stata-png-fix/get/master.tar.gz)
- * [Tar.bz2](https://bitbucket.org/vilhuberl/stata-png-fix/get/master.tar.bz2)
+
+* [ZIP](https://bitbucket.org/vilhuberl/stata-png-fix/get/master.zip)
+* [Tar.gz](https://bitbucket.org/vilhuberl/stata-png-fix/get/master.tar.gz)
+* [Tar.bz2](https://bitbucket.org/vilhuberl/stata-png-fix/get/master.tar.bz2)
+
 though you'll have to make symlinks in /usr/local/bin or wherever you want explicitly:
 ````bash
 sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata
