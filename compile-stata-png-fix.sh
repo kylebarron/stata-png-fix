@@ -30,7 +30,8 @@ echo "Ready to install in $INSTALLDIR (ctrl-c to end)"
 read
 sudo make install
 # also copy over the script
-install -p -m 755 stata-png-fixed.sh $INSTALLDIR/stata-png-fixed.sh
+cd $builddir
+sudo install -p -m 755 stata-png-fixed.sh $INSTALLDIR/stata-png-fixed.sh
 # Now 
 echo "Execute the following commands:
 
@@ -41,6 +42,6 @@ sudo ln -s /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-sm
 "
 
 # make the tar file
-(cd $INSTALLDIR; tar cjf ${builddir}/${NAME}.libs.tar.bz2 *)
+(cd $INSTALLDIR; tar cjf ${cwd}/releases/${NAME}.libs.tar.bz2 *)
 
 
