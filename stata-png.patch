@@ -1,0 +1,11 @@
+--- libpng-1.6.2/scripts/pnglibconf.dfa	2013-04-25 08:24:45.000000000 -0400
++++ libpng-1.6.2/scripts/pnglibconf.dfa.patched	2014-04-25 22:28:34.273329264 -0400
+@@ -232,7 +232,7 @@
+ # The TEXT values are the defaults when writing compressed text (all forms)
+ #
+ # Include the zlib header too, so that the defaults below are known
+-@#  include <zlib.h>
++#@#  include <zlib.h>
+ 
+ # The '@' here means to substitute the value when pnglibconf.h is built
+ setting Z_DEFAULT_COMPRESSION default @Z_DEFAULT_COMPRESSION
