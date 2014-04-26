@@ -35,10 +35,10 @@ sudo install -p -m 755 stata-png-fixed.sh $INSTALLDIR/stata-png-fixed.sh
 # Now 
 echo "Execute the following commands:
 
-sudo ln -s /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata
-sudo ln -s /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-se
-sudo ln -s /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-mp
-sudo ln -s /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-sm
+sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata
+sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-se
+sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-mp
+sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-sm
 "
 
 # make the tar file
