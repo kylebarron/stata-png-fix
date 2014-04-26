@@ -12,3 +12,6 @@ Installation
 Check out this git repository, and run 
  compile-stata-png-fix.sh
 
+Thanks
+------
+Thanks to Peter Fuschich at the Stata Technical Department for providing the initial fix. All errors are mine.
