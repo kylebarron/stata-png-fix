@@ -22,7 +22,10 @@ tar xzf %{source0}
 
 %install
 # the actual application
-cd %buildroot/usr/local/%{name}
+cd %buildroot
+install -d -m 755 -g root -o root %buildroot/usr/local/%{name}
+install -m 0755 -o root -g users stata-png-fixed.sh %buildroot/usr/local/%{name}/stata-png-fixed.sh
+
 ln -s %buildroot/usr/local/%{name}/stata-png-fixed.sh %buildroot/usr/local/bin/xstata
 ln -s %buildroot/usr/local/%{name}/stata-png-fixed.sh %buildroot/usr/local/bin/xstata-se
 ln -s %buildroot/usr/local/%{name}/stata-png-fixed.sh %buildroot/usr/local/bin/xstata-mp
@@ -41,7 +44,7 @@ ln -s %buildroot/usr/local/%{name}/stata-png-fixed.sh %buildroot/usr/local/bin/x
 /usr/local/bin/xstata-se
 /usr/local/bin/xstata-mp
 /usr/local/bin/xstata-sm
-/usr/local/%{name}
+/usr/local/%{name}/
 
 %changelog
 * Sat Apr 26 2014 vilhuber@lservices
