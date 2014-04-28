@@ -21,10 +21,10 @@ Download the tar file I created using the script
 
 though you'll have to make symlinks in /usr/local/bin or wherever you want explicitly:
 ````bash
-sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata
-sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-se
-sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-mp
-sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-sm
+sudo ln -sf /usr/local/stata-png-fix/stata-png-fixed.sh /usr/local/bin/xstata
+sudo ln -sf /usr/local/stata-png-fix/stata-png-fixed.sh /usr/local/bin/xstata-se
+sudo ln -sf /usr/local/stata-png-fix/stata-png-fixed.sh /usr/local/bin/xstata-mp
+sudo ln -sf /usr/local/stata-png-fix/stata-png-fixed.sh /usr/local/bin/xstata-sm
 ````
 
 Thanks
