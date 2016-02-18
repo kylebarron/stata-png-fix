@@ -1,4 +1,4 @@
-Fixes PNG problem with Stata on openSUSE 13.1
+Fixes PNG problem with Stata on openSUSE (multiple versions) 
 =============================================
 
 [Stata](http://www.stata.com)  has a bug on newer version of openSUSE (13.1, 13.2, Leap 42.1 confirmed), in that it doesn't like the libpng that comes with the system, and shows no icons. This fix (thanks to Stata tech support) solves the problem.
