@@ -1,9 +1,7 @@
 #!/bin/bash
-NAME=stata-png-fix
-INSTALLDIR=~/local/${NAME}
+INSTALLDIR=~/local/stata-png-fix
 cwd=$(pwd)
 builddir=$(mktemp -d)
-echo "Building in $builddir"
 cd $builddir
 wget http://downloads.sourceforge.net/project/libpng/zlib/1.2.3/zlib-1.2.3.tar.gz
 wget http://downloads.sourceforge.net/project/libpng/libpng16/older-releases/1.6.2/libpng-1.6.2.tar.gz
