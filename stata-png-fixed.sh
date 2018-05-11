@@ -11,5 +11,5 @@ link=$(readlink $0)
 INSTALLDIR=$(dirname $link)
 export LD_LIBRARY_PATH=$INSTALLDIR/lib:$INSTALLDIR/lib64
 
-exec /usr/local/stata$version/$flavor $args
+exec ~/local/stata/$flavor $args
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 NAME=stata-png-fix
-INSTALLDIR=/usr/local/${NAME}
+INSTALLDIR=~/local/${NAME}
 cwd=$(pwd)
 builddir=$(mktemp -d)
 echo "Building in $builddir"
@@ -14,10 +14,7 @@ tar zxf zlib-1.2.3.tar.gz
 cd zlib-1.2.3
 export CFLAGS="-fPIC"
 ./configure --prefix=$INSTALLDIR
-make
-echo "Ready to install in $INSTALLDIR (ctrl-c to end)"
-read
-sudo make install
+make && make install
 cd $builddir
 tar xzf libpng-1.6.2.tar.gz
 cd libpng-1.6.2
@@ -25,23 +22,12 @@ export CFLAGS="-I$INSTALLDIR/include -fPIC"
 export LDFLAGS="-L$INSTALLDIR/lib"
 ./configure --prefix=$INSTALLDIR
 patch -p1 < stata-png.patch
-make
-echo "Ready to install in $INSTALLDIR (ctrl-c to end)"
-read
-sudo make install
+make && make install
 # also copy over the script
 cd $builddir
-sudo install -p -m 755 stata-png-fixed.sh $INSTALLDIR/stata-png-fixed.sh
-# Now 
-echo "Execute the following commands:
-
-sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata
-sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-se
-sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-mp
-sudo ln -sf /usr/local/${NAME}/stata-png-fixed.sh /usr/local/bin/xstata-sm
-"
-
-# make the tar file
-(cd $INSTALLDIR; tar cjf ${cwd}/releases/${NAME}.libs.tar.bz2 *)
-
-
+install -p -m 755 stata-png-fixed.sh $INSTALLDIR/stata-png-fixed.sh
+# Now
+ln -sf ${INSTALLDIR}/stata-png-fixed.sh ~/local/bin/xstata
+ln -sf ${INSTALLDIR}/stata-png-fixed.sh ~/local/bin/xstata-se
+ln -sf ${INSTALLDIR}/stata-png-fixed.sh ~/local/bin/xstata-mp
+ln -sf ${INSTALLDIR}/stata-png-fixed.sh ~/local/bin/xstata-sm
