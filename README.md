@@ -1,32 +1,36 @@
-Fixes PNG problem with Stata on openSUSE (multiple versions) 
-=============================================
+# Fix for missing Stata icons on Linux
 
-[Stata](http://www.stata.com)  has a bug on newer version of openSUSE (13.1, 13.2, Leap 42.1 confirmed), in that it doesn't like the libpng that comes with the system, and shows no icons. This fix (thanks to Stata tech support) solves the problem.
+[Stata](http://www.stata.com) has a bug on newer versions of several Linux distributions, among them Ubuntu 18.04 and openSUSE [^1], in that it doesn't like the `libpng` that comes with the system, and shows no icons. This fix solves the problem.
 
-The problem
------------
-Here's the original description: http://www.statalist.org/forums/forum/general-stata-discussion/general/2199-linux-stata-bug-libpng-on-newer-opensuse-possibly-other-distributions
+[^1]: <https://bitbucket.org/vilhuberl/stata-png-fix>
 
-Installation
-------------
-Check out this git repository, and run 
- `compile-stata-png-fix.sh`
+## The problem
 
-Or:
-Download the tar file I created using the script 
+Here's the [original description](http://www.statalist.org/forums/forum/general-stata-discussion/general/2199-linux-stata-bug-libpng-on-newer-opensuse-possibly-other-distributions) on StataList.
 
-* [ZIP](https://bitbucket.org/vilhuberl/stata-png-fix/get/master.zip)
-* [Tar.gz](https://bitbucket.org/vilhuberl/stata-png-fix/get/master.tar.gz)
-* [Tar.bz2](https://bitbucket.org/vilhuberl/stata-png-fix/get/master.tar.bz2)
+## Installation
 
-though you'll have to make symlinks in /usr/local/bin or wherever you want explicitly:
-````bash
-sudo ln -sf /usr/local/stata-png-fix/stata-png-fixed.sh /usr/local/bin/xstata
-sudo ln -sf /usr/local/stata-png-fix/stata-png-fixed.sh /usr/local/bin/xstata-se
-sudo ln -sf /usr/local/stata-png-fix/stata-png-fixed.sh /usr/local/bin/xstata-mp
-sudo ln -sf /usr/local/stata-png-fix/stata-png-fixed.sh /usr/local/bin/xstata-sm
-````
+This git repository was forked from Lars Vilhuber's [Bitbucket repository](https://bitbucket.org/vilhuberl/stata-png-fix). The main difference is that I don't like to run programs with `sudo` when I don't have to, so this script doesn't require `sudo`.
 
-Thanks
-------
-Thanks to Peter Fuschich at the Stata Technical Department for providing the initial fix. All errors are mine.
+To install this:
+
+1. Clone this repository:
+
+    ```bash
+    git clone https://github.com/kylebarron/stata-png-fix.git
+    cd stata-png-fix
+    ```
+
+2. Change the value of `STATA_DIR` in the `stata-png-fixed.sh` file to the directory with your Stata installation. For me this is `~/local/stata`. (Don't include a trailing `/`). This folder should contain the `xstata`, `xstata-se`, or `xstata-mp` binary.
+
+3. Run
+
+    ```bash
+    bash compile-stata-png-fix.sh
+    ```
+
+4. Add `~/local/bin/` to your `PATH`.
+
+## Acknowledgments
+
+[Lars Vilhuber](https://bitbucket.org/vilhuberl/) for creating most of the original script.
