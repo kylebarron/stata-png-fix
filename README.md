@@ -14,22 +14,28 @@ This git repository was forked from Lars Vilhuber's [Bitbucket repository](https
 
 To install this:
 
-1. Clone this repository:
+1. Install dependencies (gcc, wget)
+
+    ```
+    sudo apt install build-essential wget
+    ```
+
+2. Clone this repository:
 
     ```bash
     git clone https://github.com/kylebarron/stata-png-fix.git
     cd stata-png-fix
     ```
 
-2. Change the value of `STATA_DIR` in the `stata-png-fixed.sh` file to the directory with your Stata installation. For me this is `~/local/stata`. (Don't include a trailing `/`). This folder should contain the `xstata`, `xstata-se`, or `xstata-mp` binary.
+3. Change the value of `STATA_DIR` in the `stata-png-fixed.sh` file to the directory with your Stata installation. For me this is `~/local/stata`. (Don't include a trailing `/`). This folder should contain the `xstata`, `xstata-se`, or `xstata-mp` binary.
 
-3. Run
+4. Run
 
     ```bash
     bash compile-stata-png-fix.sh
     ```
 
-4. Add `~/local/bin/` to your `PATH`.
+5. Add `~/local/bin/` to your `PATH`.
 
 ## Acknowledgments
 
