@@ -19,7 +19,7 @@ cd libpng-1.6.2
 export CFLAGS="-I$INSTALLDIR/include -fPIC"
 export LDFLAGS="-L$INSTALLDIR/lib"
 ./configure --prefix=$INSTALLDIR
-patch -p1 < stata-png.patch
+patch -p1 < ${cwd}/stata-png.patch
 make && make install
 # also copy over the script
 cd $builddir
