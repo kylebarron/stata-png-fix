@@ -25,6 +25,7 @@ make && make install
 cd $builddir
 install -p -m 755 stata-png-fixed.sh $INSTALLDIR/stata-png-fixed.sh
 # Now
+mkdir -p ~/local/bin
 ln -sf ${INSTALLDIR}/stata-png-fixed.sh ~/local/bin/xstata
 ln -sf ${INSTALLDIR}/stata-png-fixed.sh ~/local/bin/xstata-se
 ln -sf ${INSTALLDIR}/stata-png-fixed.sh ~/local/bin/xstata-mp
