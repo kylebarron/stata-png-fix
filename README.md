@@ -37,6 +37,11 @@ To install this:
 
 5. Add `~/local/bin/` to your `PATH`.
 
+
+## Clarification about use of sudo
+
+Lars Vilhuber's linked script is better for situations where the Stata program will be used by several users. This script is easier on a single-user machine. See https://github.com/kylebarron/stata-png-fix/issues/4 for Lars' comment.
+
 ## Acknowledgments
 
 [Lars Vilhuber](https://bitbucket.org/vilhuberl/) for creating most of the original script.
